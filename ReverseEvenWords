@@ -1,0 +1,35 @@
+package Week2.Day1;
+
+public class ReverseEvenWords {
+	//Build a logic to reverse the even position words (output: I ma a erawtfos tester)
+	public String reverseString(String input)
+	{
+		String s1=input;
+		String revS1="";
+	    char[] charS1=s1.toCharArray();
+	    for (int i = charS1.length-1; i >=0; i--) {
+	    	
+	    	revS1= revS1+charS1[i];
+			
+		}
+	    return revS1;
+	}
+	public static void main(String[] args) {
+		String test = "I am a Software Tester";
+		String[] str=test.split(" ");
+		ReverseEvenWords obj=new ReverseEvenWords();
+		for (int i = 1; i < str.length; i=i+2) {
+			str[i]=obj.reverseString(str[i]);
+			//System.out.println(str[i]);
+		}
+		
+		String revEvenString="";
+		
+		for (int i = 0; i < str.length; i++) {
+			revEvenString=revEvenString+str[i]+" ";
+			
+		}
+		System.out.println("String with Even words reversed is: "+revEvenString);
+	}
+	 
+}
